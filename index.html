@@ -4,8 +4,81 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>圣经KJV版本</title>
 		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+		<style type="text/css">
+		#tooltip {
+    position: absolute;
+    border: 1px solid #ccc;
+    background: #333;
+    padding: 2px;
+    display: none;
+    color: #fff;
+}
+body {
+    background-color:#f5f5d5;font-family:Georgia,serif;letter-spacing:-0.01em;
+}
+		    #floatMenu {
+        position:absolute;
+        top:400px;
+        left:50%;
+        margin-left:235px;
+        width:100px;
+        }
+        
+        #floatMenu  #show {
+                width:100px;
+                display:block;
+                border:1px solid #999;
+                background-color:transparent;
+                border-left:4px solid #999;
+                text-decoration:none;
+                border-color: #999999;
+                color:#ccc;
+                padding:5px 5px 5px 15px;
+                margin-left:235px;
+                width: 90px;
+            }
+                #floatMenu #show span a{
+                    text-decoration: none;
+                    color: #ccc
+                }
+                #floatMenu #show span a:HOVER{
+                    text-decoration:underline;
+                    color: blue;
+                }
+                #floatMenu #show:hover {
+                    border-color:#f09;
+                }
+
+
+</style>
+		
 		<script type="text/javascript">
 		$(function(){
+			 var x = 10;
+	           var y = 20;
+	           $("a.tooltip").mouseover(function(e){
+	            this.myTitle = this.title;
+	            this.title = "";
+	            var imgTitle = this.myTitle? "<br/>" + this.myTitle : "";
+	            var imgUrl =  $(this).children().attr("src");
+	            var tooltip = "<div id='tooltip'><img src='"+ imgUrl +"' alt='模板预览图'/>"+imgTitle+"<\/div>"; //创建 div 元素
+	            $("body").append(tooltip); //把它追加到文档中      
+	            $("#tooltip")
+	             .css({
+	              "top": (e.pageY+y) + "px",
+	              "left":  (e.pageX+x)  + "px"
+	             }).show("slow");   //设置x坐标和y坐标，并且显示
+	              }).mouseout(function(){
+	            this.title = this.myTitle;
+	            $("#tooltip").remove();  //移除
+	              }).mousemove(function(e){
+	            $("#tooltip")
+	             .css({
+	              "top": (e.pageY+y) + "px",
+	              "left":  (e.pageX+x)  + "px"
+	             });
+	           });
+			
 			$("#btn").click(function(){
 				var selectedVal = $("#selectChapter").val();
 				
@@ -49,9 +122,33 @@
 			})
 		})
 		</script>
+		
+		<script type="text/javascript">
+//以下这段便是浮动的实现，很简短,parseFloat是转换为number类型
+    var menuYloc = null;
+    var name = "#floatMenu";
+    $(document).ready(function(){
+        menuYloc = parseFloat($(name).css("top").substring(0,$(name).css("top").indexOf("px")));
+        $(window).scroll(function () {
+            offset = menuYloc+$(document).scrollTop()+"px";
+            $(name).animate({top:offset},{duration:300,queue:false});
+        });
+    });
+</script>
 	</head>
-<body style="background-color:#f5f5d5;font-family:Georgia,serif;letter-spacing:-0.01em">
-	
+<body>
+	<a href="#" class="tooltip"><img
+    src="http://www.google.com/intl/en_com/images/srpr/logo3w.png" width="172"
+    height="80" /></a>
+    <div style="text-align: center;font-size: 300%;color: green;font-style: italic">鼠标放到google上，滑动鼠标</div>
+<div id="floatMenu">
+<div id="show">
+<span id="span1"><a href="#" onclick="return false;"> 上一页 </a>
+</span>
+<span id="span2"><a href="#" onclick="return false;"> 下一页 </a>
+</span>
+</div>
+</div >
 <!-- old -->
 <div>
 <div>
