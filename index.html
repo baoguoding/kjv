@@ -26,18 +26,24 @@
 						strHtml += "下一页："+data.next+"<br>";
 					}
 					
-					
-					
 					strHtml += "<hr>"
 					
-					
+					strHtml += "<table border=0 cellspacing=0 cellpadding=0 width=100%>"
 					
 					$.each(data.lineList,function(infoIndex,info){
-						strHtml += "行号："+info["lineNo"]+"<br>";
-						strHtml += "英文："+info["en"]+"<br>";
-						strHtml += "中文："+info["cn"]+"<br>";
-						strHtml += "<hr>"
+						
+						strHtml += "<tr><td width=50>";
+						strHtml += info["lineNo"];
+						strHtml += "</td><td>";
+						strHtml = strHtml + info["cn"] + "<br>" + info["cn"];
+						strHtml += "</td></tr>";
+						strHtml += "<tr><td colspan=2>";
+						strHtml += "<table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" align=\"center\" background=\"pic/dback.gif\"><tr><td><img src=\"pic/spacer.gif\" width=\"1\" height=\"6\"></td></tr></table>";
+						strHtml += "</td></tr>";
 					})
+					
+					strHtml += "</table>";
+					
 					$jsontip.html(strHtml);//显示处理后的数据
 				})
 			})
