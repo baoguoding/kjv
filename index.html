@@ -1,55 +1,40 @@
-创世记-Genesis
-<ul>
-  <li><a href="gen_1.html">gen_1.html</a></li>
-<li><a href="gen_2.html">gen_2.html</a></li>
-<li><a href="gen_3.html">gen_3.html</a></li>
-<li><a href="gen_4.html">gen_4.html</a></li>
-<li><a href="gen_5.html">gen_5.html</a></li>
-<li><a href="gen_6.html">gen_6.html</a></li>
-<li><a href="gen_7.html">gen_7.html</a></li>
-<li><a href="gen_8.html">gen_8.html</a></li>
-<li><a href="gen_9.html">gen_9.html</a></li>
-<li><a href="gen_10.html">gen_10.html</a></li>
-<li><a href="gen_11.html">gen_11.html</a></li>
-<li><a href="gen_12.html">gen_12.html</a></li>
-<li><a href="gen_13.html">gen_13.html</a></li>
-<li><a href="gen_14.html">gen_14.html</a></li>
-<li><a href="gen_15.html">gen_15.html</a></li>
-<li><a href="gen_16.html">gen_16.html</a></li>
-<li><a href="gen_17.html">gen_17.html</a></li>
-<li><a href="gen_18.html">gen_18.html</a></li>
-<li><a href="gen_19.html">gen_19.html</a></li>
-<li><a href="gen_20.html">gen_20.html</a></li>
-<li><a href="gen_21.html">gen_21.html</a></li>
-<li><a href="gen_22.html">gen_22.html</a></li>
-<li><a href="gen_23.html">gen_23.html</a></li>
-<li><a href="gen_24.html">gen_24.html</a></li>
-<li><a href="gen_25.html">gen_25.html</a></li>
-<li><a href="gen_26.html">gen_26.html</a></li>
-<li><a href="gen_27.html">gen_27.html</a></li>
-<li><a href="gen_28.html">gen_28.html</a></li>
-<li><a href="gen_29.html">gen_29.html</a></li>
-<li><a href="gen_30.html">gen_30.html</a></li>
-<li><a href="gen_31.html">gen_31.html</a></li>
-<li><a href="gen_32.html">gen_32.html</a></li>
-<li><a href="gen_33.html">gen_33.html</a></li>
-<li><a href="gen_34.html">gen_34.html</a></li>
-<li><a href="gen_35.html">gen_35.html</a></li>
-<li><a href="gen_36.html">gen_36.html</a></li>
-<li><a href="gen_37.html">gen_37.html</a></li>
-<li><a href="gen_38.html">gen_38.html</a></li>
-<li><a href="gen_39.html">gen_39.html</a></li>
-<li><a href="gen_40.html">gen_40.html</a></li>
-<li><a href="gen_41.html">gen_41.html</a></li>
-<li><a href="gen_42.html">gen_42.html</a></li>
-<li><a href="gen_43.html">gen_43.html</a></li>
-<li><a href="gen_44.html">gen_44.html</a></li>
-<li><a href="gen_45.html">gen_45.html</a></li>
-<li><a href="gen_46.html">gen_46.html</a></li>
-<li><a href="gen_47.html">gen_47.html</a></li>
-<li><a href="gen_48.html">gen_48.html</a></li>
-<li><a href="gen_49.html">gen_49.html</a></li>
-<li><a href="gen_50.html">gen_50.html</a></li>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>getJSON获取数据</title>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<style type="text/css">
+#divframe{ border:1px solid #999; width:500px; margin:0 auto;}
+.loadTitle{ background:#CCC; height:30px;}
+</style>
+<script type="text/javascript">
+$(function(){
+$("#btn").click(function(){
+$.getJSON("1ch_1.json",function(data){
+var $jsontip = $("#jsonTip");
+var strHtml = "123";//存储数据的变量
+$jsontip.empty();//清空内容
+$.each(data,function(infoIndex,info){
+strHtml += "姓名："+info["name"]+"<br>";
+strHtml += "性别："+info["sex"]+"<br>";
+strHtml += "邮箱："+info["email"]+"<br>";
+strHtml += "<hr>"
+})
+$jsontip.html(strHtml);//显示处理后的数据
+})
+})
 
-  
-</ul>
+})
+</script>
+</head>
+<body>
+<div id="divframe">
+<div class="loadTitle">
+<input type="button" value="获取数据" id="btn"/>
+</div>
+<div id="jsonTip">
+</div>
+</div>
+</body>
+</html> 
