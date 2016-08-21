@@ -3,23 +3,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>圣经KJV版本</title>
-		<style>
-*{margin:0;padding:0}
-a{text-decoration:none}
-#conter{width:1000px;margin:auto}
-#help-left{width:200px;font-family:'microsoft YaHei';float:left}
-.menu{border-left:1px solid #ccc;border-right:1px solid #ccc}
-.menu:last-child{border-bottom:1px solid #ccc}
-.menu summary{height:40px;line-height:40px;text-indent:10px;outline:0;font-size:14px;font-weight:700;border-top:1px solid #ddd;background:-webkit-gradient(linear,left top,left bottom,color-stop(0,#FEFEFE),color-stop(1,#CCC));cursor:pointer}
-.menu summary::-webkit-details-marker{display:none}
-.menu summary:before{content:"+";display:inline-block;width:16px;height:16px;margin-right:10px;font-size:18px;font-weight:700}
-.menu[open] summary:before{content:"-"}
-.menu ul{padding:10px 0}
-.menu ul li{list-style:none;text-indent:25px;font-size:12px;height:30px;line-height:30px}
-.menu ul li a{display:block;color:#666}
-.menu ul li a:hover{text-decoration:underline}
-</style>
-		
+		<link rel="stylesheet" href="css/lanrenzhijia.css">
 		<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 		<script type="text/javascript">
 		$(function(){
@@ -68,46 +52,59 @@ a{text-decoration:none}
 		</script>
 	</head>
 <body style="background-color:#f5f5d5;font-family:Georgia,serif;letter-spacing:-0.01em">
-	<!--代码部分begin -->
-    <section id="conter">
-        <section id="help-left">
-            <details class="menu" open>
-                <summary>洋魔坊保障</summary>
-                <ul>
-                    <li><a href="#">正品保障</a></li>
-                    <li><a href="#">海外直供</a></li>
-                </ul>
-            </details>
-            <details class="menu" open>
-                <summary>新手帮助</summary>
-                <ul>
-                    <li><a href="#">申请支付宝</a></li>
-                    <li><a href="#">支付宝充值</a></li>
-                </ul>
-            </details>
-            <details class="menu" open>
-                <summary>支付方式</summary>
-                <ul>
-                    <li><a href="#">支付宝快捷支付</a></li>
-                    <li><a href="#">支付宝余额支付</a></li>
-                    <li><a href="#">新手入门</a></li>
-                </ul>
-            </details>
-            <details class="menu" open>
-                <summary>商家支持</summary>
-                <ul>
-                    <li><a href="#">洋魔坊规则</a></li>
-                    <li><a href="#">国际招商</a></li>
-                    <li><a href="#">服务商招募</a></li>
-                    <li><a href="#">商家系统对接</a></li>
-                    <li><a href="#">联系我们</a></li>
-                </ul>
-            </details>
-        </section>
-        <section id="help-right">werwe</section>
-    </section>
-    <!--代码部分end -->
+	
+	<!-- 代码部分begin -->
+<div class="meny">
+  <h2>More Experiments</h2>
+  <ul>
+    <li><a href="#">Avgrund</a></li>
+    <li><a href="#">Radar</a></li>
+    <li><a href="#">forkit.js</a></li>
+    <li><a href="#">stroll.js</a></li>
+    <li><a href="#">zoom.js</a></li>
+    <li><a href="#">reveal.js</a></li>
+    <li><a href="#">Sinuous for iOS</a></li>
+    <li><a href="#">DOM Tree</a></li>
+    <li><a href="#">Holobox</a></li>
+    <li><a href="#">404</a></li>
+  </ul>
+</div>
+<div class="meny-arrow"></div>
+<div class="contents">
+  <article>
+    <h1>Meny</h1>
+    <p> A three dimensional and space efficient menu. </p>
+    <p> Move your mouse towards the arrow &mdash; or swipe in from the arrow if you're on a touch device &mdash; to open.
+      Test it with any page by appending a URL, like so: <a href="#">lab.hakim.se/meny/?u=http://hakim.se.</a> </p>
+    <p> Meny can be positioned on any side of the screen: <br>
+      <a href="#">top</a> - <a href="#">right</a> - <a href="#">bottom</a> - <a href="#">left</a> </p>
+    <p> Instructions and download at <a href="#">github.com/hakimel/meny</a>. </p>
+    <p> The name, <em>Meny</em>, is swedish. </p>
+    <small> Created by <a href="#">@hakimel</a> / <a href="#">http://hakim.se</a> </small> </article>
+  <div class="sharing"> <a href="#" class="twitter-share-button" data-text="lanrenzhijia" data-url="#" data-count="small" data-related="hakimel"></a> </div>
+</div>
+<script src="js/meny.min.js"></script>
+<script>
+	var meny = Meny.create({
+		menuElement: document.querySelector( '.meny' ),
+		contentsElement: document.querySelector( '.contents' ),
+		position: Meny.getQuery().p || 'left',
+		height: 200,
+		width: 260,
+		threshold: 40,
+		mouse: true,
+		touch: true
+	});
+	if( Meny.getQuery().u && Meny.getQuery().u.match( /^http/gi ) ) {
+		var contents = document.querySelector( '.contents' );
+		contents.style.padding = '0px';
+		contents.innerHTML = '<div class="cover"></div><iframe src="'+ Meny.getQuery().u +'" style="width: 100%; height: 100%; border: 0; position: absolute;"></iframe>';
+	}
+</script>
+<!-- 代码部分end -->
 
+
+<!-- old -->
 <div>
 <div>
 
