@@ -18,8 +18,16 @@
 					
 					strHtml += "标题："+data.title+"<br>";
 					strHtml += "附标题："+data.subTitle+"<br>";
-					strHtml += "上一页："+data.pre+"<br>";
-					strHtml += "下一页："+data.next+"<br>";
+					if(data.pre <> ''){
+						strHtml += "上一页："+data.pre+"<br>";
+					}
+					
+					if(data.next <> '') {
+						strHtml += "下一页："+data.next+"<br>";
+					}
+					
+					
+					
 					strHtml += "<hr>"
 					
 					
