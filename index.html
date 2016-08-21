@@ -7,9 +7,9 @@
 		<script type="text/javascript">
 		$(function(){
 			$("#btn").click(function(){
-				var selectChapter = $("#selectChapter").value;
+				var selectedVal = $("#selectChapter").val();
 				
-				alert(selectChapter);
+				alert(selectedVal);
 				
 				$.getJSON("data/1ch_1.json",function(data){
 					var $jsontip = $("#jsonTip");
