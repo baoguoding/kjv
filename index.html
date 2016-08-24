@@ -224,7 +224,7 @@
                 $.each(data.lineList,function(infoIndex,info){
 
                     strHtml += "<p class='yue'>";
-                    strHtml += info["lineNo"];
+                    strHtml = strHtml +"["+ info["lineNo"]+"]";
                     strHtml += "<br/>";
                     strHtml = strHtml + info["en"];
                     //strHtml += "</p>";
