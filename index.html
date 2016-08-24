@@ -6,6 +6,7 @@
 <link href="./static/themes/default/css/codemirror.css" rel="stylesheet">
 <link href="./static/themes/default/css/highlight.css" rel="stylesheet">
 <link href="./static/themes/default/css/itranswarp.css" rel="stylesheet">
+<link href="./static/themes/default/css/yue.css" rel="stylesheet">
 
 <!-- END CSS COMPRESS -->
 <!--[if lt IE 9]>
@@ -103,8 +104,8 @@
     </div>
     <div style="width: 100%; position: relative;" class="x-content" id="jsonTip">
 
-        <h4>Morning Jesus</h4>
-        <div class="x-wiki-info"><span>Morning Jesus</span></div>
+        <h4 class="yue">Morning Jesus</h4>
+        <div class="windows"><span>Morning Jesus</span></div>
         <hr>
         <div class="x-wiki-content">
         	<p><img  width="605" height="454" alt="Jesus Loves You" src="pic/o_jesus_loves_you_overlooking_the_cit.jpg"></p>
@@ -215,18 +216,25 @@
                 var strHtml = "";//存储数据的变量
                 $jsontip.empty();//清空内容
 
-                strHtml += "<h4>"+data.title+"</h4>";
-                strHtml += "<div class='x-wiki-info'><span>"+data.subTitle+"</span></div>";
+                strHtml += "<h4 class='yue'>"+data.title+"</h4>";
+                strHtml += "<p class='windows'>"+data.subTitle+"</p>";
                 strHtml += "<hr>";
                 strHtml += "<div class='x-wiki-content'>";
 
                 $.each(data.lineList,function(infoIndex,info){
 
-                    strHtml += "<p>";
+                    strHtml += "<p class='yue'>";
                     strHtml += info["lineNo"];
                     strHtml += "<br/>";
-                    strHtml = strHtml + info["en"] + "<br>" + info["cn"];
+                    strHtml = strHtml + info["en"];
+                    //strHtml += "</p>";
+                    
+                    strHtml = strHtml +"<br/>";
+                    
+                    //strHtml += "<p class='yue'>";
+                    strHtml = strHtml + info["cn"];
                     strHtml += "</p>";
+                    
                 })
 
                 strHtml += "</div>";
