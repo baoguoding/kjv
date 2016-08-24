@@ -13,6 +13,7 @@
 <![endif]-->
 
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script src="./static/js/underscore.js"></script>
 <script src="./static/themes/default/js/all.js"></script>
 
@@ -36,6 +37,31 @@
     }
 </style>
 <script type="text/javascript">
+
+$(document).ready(function(){
+	/* This code is executed after the DOM has been completely loaded */
+
+	/* Changing thedefault easing effect - will affect the slideUp/slideDown methods: */
+	$.easing.def = "easeOutBounce";
+
+	/* Binding a click event handler to the links: */
+	$('li.button a').click(function(e){
+	
+		/* Finding the drop down list that corresponds to the current section: */
+		var dropDown = $(this).parent().next();
+		
+		/* Closing all other drop down sections, except the current one */
+		$('.dropdown').not(dropDown).slideUp('slow');
+		dropDown.slideToggle('slow');
+		
+		/* Preventing the default event (which would be to navigate the browser to the link's address) */
+		e.preventDefault();
+	})
+	
+});
+
+
+
 function retrieve(id) {
 	var filePath = 'data/' + id + '.json';
 	
@@ -107,159 +133,163 @@ function retrieve(id) {
             <li class="uk-nav-header">旧约</li>
         </ul>
         <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
-            <li id="kjv1">
+            <li id="kjv1" class="button">
             	<a href="javascript:void(0);">创世记-Genesis</a>
             </li>
-            <li style="margin-left:1em;" id="gen_1">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_1');">创世记-第 1 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_2">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_2');">创世记-第 2 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_3">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_3');">创世记-第 3 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_4">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_4');">创世记-第 4 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_5">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_5');">创世记-第 5 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_6">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_6');">创世记-第 6 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_7">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_7');">创世记-第 7 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_8">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_8');">创世记-第 8 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_9">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_9');">创世记-第 9 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_10">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_10');">创世记-第 10 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_11">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_11');">创世记-第 11 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_12">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_12');">创世记-第 12 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_13">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_13');">创世记-第 13 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_14">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_14');">创世记-第 14 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_15">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_15');">创世记-第 15 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_16">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_16');">创世记-第 16 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_17">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_17');">创世记-第 17 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_18">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_18');">创世记-第 18 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_19">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_19');">创世记-第 19 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_20">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_20');">创世记-第 20 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_21">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_21');">创世记-第 21 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_22">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_22');">创世记-第 22 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_23">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_23');">创世记-第 23 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_24">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_24');">创世记-第 24 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_25">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_25');">创世记-第 25 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_26">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_26');">创世记-第 26 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_27">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_27');">创世记-第 27 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_28">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_28');">创世记-第 28 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_29">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_29');">创世记-第 29 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_30">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_30');">创世记-第 30 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_31">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_31');">创世记-第 31 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_32">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_32');">创世记-第 32 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_33">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_33');">创世记-第 33 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_34">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_34');">创世记-第 34 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_35">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_35');">创世记-第 35 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_36">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_36');">创世记-第 36 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_37">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_37');">创世记-第 37 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_38">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_38');">创世记-第 38 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_39">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_39');">创世记-第 39 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_40">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_40');">创世记-第 40 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_41">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_41');">创世记-第 41 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_42">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_42');">创世记-第 42 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_43">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_43');">创世记-第 43 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_44">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_44');">创世记-第 44 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_45">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_45');">创世记-第 45 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_46">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_46');">创世记-第 46 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_47">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_47');">创世记-第 47 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_48">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_48');">创世记-第 48 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_49">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_49');">创世记-第 49 章</a>
-            </li>
-            <li style="margin-left:1em;" id="gen_50">
-            	<a href="javascript:void(0);"  onclick="retrieve('gen_50');">创世记-第 50 章</a>
-            </li>
+            <li class="dropdown">
+            	<ul>
+		            <li style="margin-left:1em;" id="gen_1">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_1');">创世记-第 1 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_2">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_2');">创世记-第 2 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_3">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_3');">创世记-第 3 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_4">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_4');">创世记-第 4 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_5">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_5');">创世记-第 5 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_6">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_6');">创世记-第 6 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_7">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_7');">创世记-第 7 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_8">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_8');">创世记-第 8 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_9">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_9');">创世记-第 9 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_10">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_10');">创世记-第 10 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_11">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_11');">创世记-第 11 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_12">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_12');">创世记-第 12 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_13">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_13');">创世记-第 13 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_14">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_14');">创世记-第 14 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_15">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_15');">创世记-第 15 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_16">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_16');">创世记-第 16 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_17">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_17');">创世记-第 17 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_18">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_18');">创世记-第 18 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_19">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_19');">创世记-第 19 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_20">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_20');">创世记-第 20 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_21">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_21');">创世记-第 21 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_22">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_22');">创世记-第 22 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_23">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_23');">创世记-第 23 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_24">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_24');">创世记-第 24 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_25">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_25');">创世记-第 25 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_26">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_26');">创世记-第 26 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_27">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_27');">创世记-第 27 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_28">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_28');">创世记-第 28 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_29">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_29');">创世记-第 29 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_30">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_30');">创世记-第 30 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_31">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_31');">创世记-第 31 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_32">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_32');">创世记-第 32 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_33">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_33');">创世记-第 33 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_34">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_34');">创世记-第 34 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_35">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_35');">创世记-第 35 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_36">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_36');">创世记-第 36 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_37">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_37');">创世记-第 37 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_38">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_38');">创世记-第 38 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_39">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_39');">创世记-第 39 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_40">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_40');">创世记-第 40 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_41">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_41');">创世记-第 41 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_42">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_42');">创世记-第 42 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_43">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_43');">创世记-第 43 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_44">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_44');">创世记-第 44 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_45">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_45');">创世记-第 45 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_46">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_46');">创世记-第 46 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_47">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_47');">创世记-第 47 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_48">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_48');">创世记-第 48 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_49">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_49');">创世记-第 49 章</a>
+		            </li>
+		            <li style="margin-left:1em;" id="gen_50">
+		            	<a href="javascript:void(0);"  onclick="retrieve('gen_50');">创世记-第 50 章</a>
+		            </li>
+		    	</ul>
+		    </li>
             <li id="kjv2">
             	<a href="javascript:void(0);">出埃及记-Exodus</a>
             </li>
