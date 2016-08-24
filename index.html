@@ -44,16 +44,8 @@ function retrieve(id) {
 		var strHtml = "";//存储数据的变量
 		$jsontip.empty();//清空内容
 		
-		strHtml += "标题："+data.title+"<br>";
-		strHtml += "附标题："+data.subTitle+"<br>";
-		if(data.pre!=''){
-			strHtml += "上一章："+data.pre+"<br>";
-		}
-		
-		if(data.next!='') {
-			strHtml += "下一章："+data.next+"<br>";
-		}
-		
+		strHtml += "<h4>"+data.title+"</h4>";
+		strHtml += "<div class="x-wiki-info"><span>"+data.subTitle+"</span></div>";
 		strHtml += "<hr>"
 		
 		strHtml += "<table border=0 cellspacing=0 cellpadding=0 width=100%>"
