@@ -8919,3 +8919,26 @@ ul.jqtree-tree li.jqtree-selected > .jqtree-element:hover {
 ul.jqtree-tree .jqtree-moving > .jqtree-element .jqtree-title {
   outline: dashed 1px #0593d3;
 }
+
+/*baoguo*/
+
+.x-center {
+    margin: 0;
+}
+.x-center {
+    margin-left: 316px;
+    padding-left: 15px;
+}
+    
+ .dropdown{
+	/* The expandable lists */
+	display:none;
+	padding-top:5px;
+	width:100%;
+}
+
+.x-wiki-visible {
+    display: block;
+}
+
+.x-display-if-signin { display: none; }

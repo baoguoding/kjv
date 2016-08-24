@@ -19,42 +19,6 @@
 <script type="text/javascript" src="static/themes/default/js/all.js"></script>
 
 
-<style id="x-doc-style">
-    .x-display-if-signin { display: none; }
-</style>
-
-<style>
-    .x-wiki-visible {
-        display: block;
-    }
-</style>
-
-<style>
-    .x-center {
-        margin: 0;
-    }
-    .x-center {
-        margin-left: 316px;
-        padding-left: 15px;
-    }
-    
- .dropdown{
-	/* The expandable lists */
-	display:none;
-	padding-top:5px;
-	width:100%;
-}
-</style>
-<script type="text/javascript">
-
-$(document).ready(function(){
-	/* This code is executed after the DOM has been completely loaded */
-
-	/* Changing thedefault easing effect - will affect the slideUp/slideDown methods: */
-
-});
-
-</script>
 <body ng-app="app" ng-controller="ctrl">
 <div id="BAIDU_DUP_fp_wrapper" style="position: absolute; left: -1px; bottom: -1px; z-index: 0; width: 0px; height: 0px; overflow: hidden; visibility: hidden; display: none;">
 	<iframe id="BAIDU_DUP_fp_iframe" src="//pos.baidu.com/wh/o.htm?ltr=" style="width: 0px; height: 0px; visibility: hidden; display: none;">
@@ -90,7 +54,6 @@ $(document).ready(function(){
 
 <div class="x-sidebar-left">
     <div class="x-sidebar-left-top">
-
     </div>
     <div class="x-sidebar-left-content">
 
@@ -99,28 +62,40 @@ $(document).ready(function(){
         </ul>
         
         <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
-
-        <ANY ng-repeat="book in books" >
-            <li id="{{book.id}}" class="button">
-                <a href="javascript:void(0);">{{book.name}}</a>
-            </li>
-            <li class="dropdown">
-                <ul>
-                    <li  ng-repeat="chapter in book.chapters" style="margin-left:1em;" id="{{chapter.value}}"  >
-                        <a href="javascript:void(0);"  ng-click="retrieve(chapter.value);">{{chapter.name}}</a>
-                    </li>
-                </ul>
-            </li>
-        </ANY>
-
+	        <ANY ng-repeat="book in oldTestament" >
+	            <li id="{{book.id}}" class="button">
+	                <a href="javascript:void(0);">{{book.name}}</a>
+	            </li>
+	            <li class="dropdown">
+	                <ul>
+	                    <li  ng-repeat="chapter in book.chapters" style="margin-left:1em;" id="{{chapter.value}}"  >
+	                        <a href="javascript:void(0);"  ng-click="retrieve(chapter.value);">{{chapter.name}}</a>
+	                    </li>
+	                </ul>
+	            </li>
+	        </ANY>
+		</ul>
+		
+        <ul class="uk-nav uk-nav-side">
+            <li class="uk-nav-header">新约</li>
+        </ul>
+        <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
+	        <ANY ng-repeat="book1 in newTestament" >
+	            <li id="{{book1.id}}" class="button">
+	                <a href="javascript:void(0);">{{book1.name}}</a>
+	            </li>
+	            <li class="dropdown">
+	                <ul>
+	                    <li  ng-repeat="chapter1 in book1.chapters" style="margin-left:1em;" id="{{chapter1.value}}"  >
+	                        <a href="javascript:void(0);"  ng-click="retrieve(chapter1.value);">{{chapter1.name}}</a>
+	                    </li>
+	                </ul>
+	            </li>
+	        </ANY>
 		</ul>
         <div class="x-placeholder"></div>
-
     </div>
-
 </div>
-
-
 
 <div class="x-center">
     <div>
@@ -158,24 +133,43 @@ $(document).ready(function(){
     <div class="uk-offcanvas-bar">
         <div class="uk-panel">
 
-            <ul class="uk-nav uk-nav-side">
-                <li class="uk-nav-header">旧约</li>
-            </ul>
-            <ul class="uk-nav uk-nav-side">
-
-                <ANY ng-repeat="book1 in books" >
-                    <li id="{{book1.id}}" class="button">
-                        <a href="javascript:void(0);">{{book1.name}}</a>
-                    </li>
-                    <li class="dropdown">
-                        <ul>
-                            <li  ng-repeat="chapter1 in book1.chapters" style="margin-left:1em;" id="{{chapter1.value}}"  >
-                                <a href="javascript:void(0);"  ng-click="retrieve(chapter1.value);">{{chapter1.name}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ANY>
-            </ul>
+                    <ul class="uk-nav uk-nav-side">
+            <li class="uk-nav-header">旧约</li>
+        </ul>
+        
+        <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
+	        <ANY ng-repeat="book2 in oldTestament" >
+	            <li id="{{book2.id}}" class="button">
+	                <a href="javascript:void(0);">{{book2.name}}</a>
+	            </li>
+	            <li class="dropdown">
+	                <ul>
+	                    <li  ng-repeat="chapter2 in book2.chapters" style="margin-left:1em;" id="{{chapter2.value}}"  >
+	                        <a href="javascript:void(0);"  ng-click="retrieve(chapter2.value);">{{chapter2.name}}</a>
+	                    </li>
+	                </ul>
+	            </li>
+	        </ANY>
+		</ul>
+		
+        <ul class="uk-nav uk-nav-side">
+            <li class="uk-nav-header">新约</li>
+        </ul>
+        <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
+	        <ANY ng-repeat="book3 in newTestament" >
+	            <li id="{{book3.id}}" class="button">
+	                <a href="javascript:void(0);">{{book3.name}}</a>
+	            </li>
+	            <li class="dropdown">
+	                <ul>
+	                    <li  ng-repeat="chapter3 in book3.chapters" style="margin-left:1em;" id="{{chapter3.value}}"  >
+	                        <a href="javascript:void(0);"  ng-click="retrieve(chapter3.value);">{{chapter3.name}}</a>
+	                    </li>
+	                </ul>
+	            </li>
+	        </ANY>
+		</ul>
+		
             <div class="x-placeholder"></div>
         </div>
     </div>
@@ -188,8 +182,8 @@ $(document).ready(function(){
 <script>
     angular.module('app',[]).controller('ctrl',['$scope','$http', '$timeout',function($scope,$http,$timeout){
         console.log("aaa");
-        $http.get("data/bible.json").success(function(response){
-            $scope.books=response.books;
+        $http.get("data/old_testament.json").success(function(response){
+            $scope.oldTestament=response.books;
             $timeout(function(){
                 $.easing.def = "easeOutBounce";
 
@@ -206,6 +200,13 @@ $(document).ready(function(){
                     /* Preventing the default event (which would be to navigate the browser to the link's address) */
                     e.preventDefault();
                 })
+            },500);
+        });
+        
+        $http.get("data/new_testament.json").success(function(response){
+            $scope.newTestament=response.books;
+            $timeout(function(){
+                
             },500);
         });
 
