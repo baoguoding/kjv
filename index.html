@@ -205,9 +205,6 @@
         
         $http.get("data/new_testament.json").success(function(response){
             $scope.newTestament=response.books;
-            $timeout(function(){
-                
-            },500);
         });
 
         $scope.retrieve=function(id) {
