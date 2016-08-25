@@ -189,7 +189,8 @@
                 $.easing.def = "easeOutBounce";
 
                 /* Binding a click event handler to the links: */
-                $('li.button a').click(function(e){
+                $('li.button a').each()
+                .click(function(e){
 
                     /* Finding the drop down list that corresponds to the current section: */
                     var dropDown = $(this).parent().next();
@@ -200,10 +201,11 @@
 
                     /* Preventing the default event (which would be to navigate the browser to the link's address) */
                     e.preventDefault();
+
                 })
-            },500);
+            },50);
         });
-        
+
         $http.get("data/new_testament.json").success(function(response){
             $scope.newTestament=response.books;
         });
