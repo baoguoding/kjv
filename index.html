@@ -59,7 +59,7 @@
     <div class="x-sidebar-left-content">
 
         <ul class="uk-nav uk-nav-side">
-            <li class="uk-nav-header">旧约</li>
+            <li class="uk-nav-header">旧约(Old Testament)</li>
         </ul>
         
         <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
@@ -78,7 +78,7 @@
 		</ul>
 		
         <ul class="uk-nav uk-nav-side">
-            <li class="uk-nav-header">新约</li>
+            <li class="uk-nav-header">新约(New Testament)</li>
         </ul>
         <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
 	        <ANY ng-repeat="book1 in newTestament" >
@@ -135,7 +135,7 @@
         <div class="uk-panel">
 
                     <ul class="uk-nav uk-nav-side">
-            <li class="uk-nav-header">旧约</li>
+            <li class="uk-nav-header">旧约(Old Testament)</li>
         </ul>
         
         <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
@@ -154,7 +154,7 @@
 		</ul>
 		
         <ul class="uk-nav uk-nav-side">
-            <li class="uk-nav-header">新约</li>
+            <li class="uk-nav-header">新约(New Testament)</li>
         </ul>
         <ul style="margin-right:-15px;" class="uk-nav uk-nav-side">
 	        <ANY ng-repeat="book3 in newTestament" >
@@ -182,7 +182,6 @@
 
 <script>
     angular.module('app',[]).controller('ctrl',['$scope','$http', '$timeout',function($scope,$http,$timeout){
-        console.log("aaa");
         $http.get("data/old_testament.json").success(function(response){
             $scope.oldTestament=response.books;
             $timeout(function(){
